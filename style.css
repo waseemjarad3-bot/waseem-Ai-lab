@@ -1,9 +1,7 @@
-/* ===== Reset ===== */
 * {
   box-sizing: border-box;
 }
 
-/* ===== Body ===== */
 body {
   margin: 0;
   min-height: 100vh;
@@ -15,90 +13,71 @@ body {
   align-items: center;
 }
 
-/* ===== Logo ===== */
+/* Logo */
 .logo {
   position: absolute;
-  top: 25px;
-  left: 40px;
+  top: 20px;
+  left: 30px;
 }
 
 .logo img {
-  height: 55px;
+  height: 50px;
 }
 
-/* ===== Mic ===== */
-.mic-container {
+/* Mic (static) */
+.mic {
   position: absolute;
-  top: 110px;
+  top: 90px;
   left: 50%;
   transform: translateX(-50%);
-}
-
-.mic-icon {
-  font-size: 40px;
-  position: relative;
-  z-index: 2;
-}
-
-.mic-circle {
-  position: absolute;
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  background: rgba(34,197,94,0.3);
-  animation: pulse 1.6s infinite;
-}
-
-@keyframes pulse {
-  from { transform: scale(0.6); opacity: 1; }
-  to { transform: scale(1.6); opacity: 0; }
+  font-size: 36px;
 }
 
 /* ===== Desktop Layout ===== */
 .container {
   width: 100%;
   max-width: 1100px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 100px;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
+  gap: 80px;
   padding: 40px;
 }
 
-/* ===== Features ===== */
+/* Features */
 .features {
   max-width: 420px;
 }
 
 .feature {
   font-size: 18px;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
   padding: 12px 16px;
   border-radius: 8px;
   background: rgba(255,255,255,0.04);
 }
 
-/* ===== Login Card ===== */
-.login-card {
+/* Login */
+.login {
   width: 340px;
   background: #020617;
-  padding: 34px;
+  padding: 32px;
   border-radius: 12px;
   text-align: center;
-  box-shadow: 0 0 30px rgba(0,0,0,0.6);
+  box-shadow: 0 0 25px rgba(0,0,0,0.6);
 }
 
-.login-card input {
+.login input {
   width: 100%;
-  padding: 11px;
-  margin: 12px 0;
+  padding: 10px;
+  margin: 10px 0;
   border-radius: 8px;
   border: none;
 }
 
-.login-card button {
+.login button {
   width: 100%;
-  padding: 13px;
+  padding: 12px;
   border-radius: 8px;
   background: #22c55e;
   border: none;
@@ -106,7 +85,7 @@ body {
   cursor: pointer;
 }
 
-/* ===== Mobile View ===== */
+/* ===== Mobile ONLY ===== */
 @media (max-width: 768px) {
 
   body {
@@ -114,9 +93,9 @@ body {
   }
 
   .container {
-    grid-template-columns: 1fr;
+    flex-direction: column;
     gap: 30px;
-    padding-top: 180px;
+    padding-top: 160px;
   }
 
   .features {
@@ -127,17 +106,17 @@ body {
     font-size: 14px;
   }
 
-  .login-card {
+  .login {
     width: 100%;
     max-width: 280px;
-    margin: 0 auto;
   }
 
   .logo img {
     height: 40px;
   }
 
-  .mic-icon {
-    font-size: 32px;
+  .mic {
+    font-size: 30px;
   }
 }
+
