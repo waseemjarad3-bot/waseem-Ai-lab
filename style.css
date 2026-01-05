@@ -144,3 +144,36 @@ button {
     box-shadow: 0 0 20px rgba(0,255,255,0.9);
   }
 }
+/* ===== MOBILE RESPONSIVE FIX ===== */
+@media (max-width: 768px) {
+
+  body {
+    height: auto;
+    padding: 20px 0;
+    align-items: flex-start;
+  }
+
+  .logo img {
+    width: 120px;
+  }
+
+  .mic-container {
+    margin: 20px auto;
+    transform: scale(0.9);
+  }
+
+  .nova-features {
+    width: 90%;
+    margin: 20px auto;
+    text-align: center;
+  }
+
+  .nf-item {
+    font-size: 14px;
+  }
+
+  .card {
+    width: 90%;
+    margin: 20px auto;
+  }
+}
