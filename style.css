@@ -131,3 +131,9 @@ body {
     font-size: 32px;
   }
 }
+@media (min-width: 1024px) {
+  .main-layout {
+    transform: none !important;
+  }
+}
+
