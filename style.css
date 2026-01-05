@@ -1,47 +1,36 @@
-/* ===== RESET ===== */
-* {
-  box-sizing: border-box;
-}
-
-/* ===== BODY ===== */
 body {
   margin: 0;
   min-height: 100vh;
   background: linear-gradient(135deg, #0f172a, #020617);
   font-family: Arial, sans-serif;
-
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 120px;
-  flex-wrap: wrap;
-  padding: 40px;
+  overflow: hidden;
 }
 
-/* ===== Logo ===== */
+/* Logo */
 .logo {
   position: absolute;
-  top: 30px;
-  left: 40px;
+  top: 20px;
+  left: 30px;
 }
 
 .logo img {
-  height: 55px;
+  height: 50px;
 }
 
-/* ===== Mic Animation ===== */
+/* Mic */
 .mic-container {
   position: absolute;
-  top: 120px;
+  top: 90px;
   left: 50%;
   transform: translateX(-50%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .mic-icon {
-  font-size: 38px;
+  font-size: 36px;
+  position: relative;
   z-index: 2;
 }
 
@@ -50,41 +39,57 @@ body {
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background: rgba(34,197,94,0.25);
+  background: rgba(34,197,94,0.3);
   animation: pulse 1.6s infinite;
 }
 
 @keyframes pulse {
-  0% { transform: scale(0.6); opacity: 1; }
-  100% { transform: scale(1.6); opacity: 0; }
+  from { transform: scale(0.6); opacity: 1; }
+  to { transform: scale(1.6); opacity: 0; }
 }
 
-/* ===== Login Card ===== */
+/* Layout */
+.main-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* Features */
+.nova-features {
+  max-width: 360px;
+  color: #fff;
+}
+
+.nf-item {
+  font-size: 17px;
+  margin-bottom: 14px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.03);
+}
+
+/* Login Card */
 .card {
+  width: 320px;
   background: #020617;
   padding: 30px;
-  width: 320px;
   border-radius: 12px;
   text-align: center;
   color: white;
   box-shadow: 0 0 25px rgba(0,0,0,0.6);
-  z-index: 2;
 }
 
-.card h1 {
-  margin-top: 0;
-}
-
-input {
+.card input {
   width: 100%;
   padding: 10px;
   margin: 10px 0;
   border-radius: 8px;
   border: none;
-  outline: none;
 }
 
-button {
+.card button {
   width: 100%;
   padding: 12px;
   border-radius: 8px;
@@ -94,88 +99,29 @@ button {
   cursor: pointer;
 }
 
-/* ===== Features ===== */
-.nova-features {
-  max-width: 380px;
-  color: #ffffff;
-}
-
-.nf-item {
-  font-size: 18px;
-  margin-bottom: 16px;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  padding: 8px 12px;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-}
-
-.nf-item::before {
-  content: "➜";
-  margin-right: 12px;
-  color: #38bdf8;
-  font-size: 20px;
-}
-
-.nf-item:hover {
-  background: rgba(56,189,248,0.12);
-  box-shadow: 0 0 15px rgba(56,189,248,0.6);
-  transform: translateX(6px);
-}
-
-/* ===== Logo Glow (Optional) ===== */
-.w2j-logo {
-  animation: glow 2s infinite alternate;
-}
-
-@keyframes glow {
-  from {
-    box-shadow: 0 0 10px rgba(0,255,255,0.4);
-  }
-  to {
-    box-shadow: 0 0 20px rgba(0,255,255,0.9);
-  }
-}
-
-/* ========================= */
-/* ===== MOBILE FIX ===== */
-/* ========================= */
+/* ===== Mobile Fix (NO SCROLL, SAME VIEW) ===== */
 @media (max-width: 768px) {
 
   body {
-    display: block;
-    padding: 20px 0;
+    overflow: hidden;
   }
 
-  .logo {
-    position: static;
-    text-align: center;
-    margin-bottom: 20px;
-  }
-
-  .logo img {
-    height: 48px;
-  }
-
-  .mic-container {
-    position: static;
-    margin: 20px auto;
-    transform: none;
-  }
-
-  .nova-features {
-    width: 90%;
-    margin: 20px auto;
-  }
-
-  .nf-item {
-    font-size: 14px;
+  .main-layout {
+    transform: scale(0.82);
+    transform-origin: top center;
+    gap: 40px;
   }
 
   .card {
-    width: 90%;
-    margin: 25px auto;
+    width: 260px;
+    padding: 20px;
+  }
+
+  .nf-item {
+    font-size: 13px;
+  }
+
+  .logo img {
+    height: 40px;
   }
 }
-
