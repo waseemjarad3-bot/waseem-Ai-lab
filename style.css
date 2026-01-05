@@ -1,73 +1,69 @@
-* {
-  box-sizing: border-box;
-}
-
 body {
   margin: 0;
   min-height: 100vh;
   background: linear-gradient(135deg, #0f172a, #020617);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 120px;
   font-family: Arial, sans-serif;
-  color: white;
+  flex-wrap: wrap;
+}
+
+/* ===== Logo ===== */
+.logo {
+  position: absolute;
+  top: 30px;
+  left: 40px;
+}
+
+.logo img {
+  height: 55px;
+}
+
+/* ===== Mic Animation ===== */
+.mic-container {
+  position: absolute;
+  top: 120px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* Logo */
-.logo {
+.mic-icon {
+  font-size: 38px;
+  z-index: 2;
+}
+
+.mic-circle {
   position: absolute;
-  top: 20px;
-  left: 30px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(34,197,94,0.25);
+  animation: pulse 1.6s infinite;
 }
 
-.logo img {
-  height: 50px;
+@keyframes pulse {
+  0% { transform: scale(0.6); opacity: 1; }
+  100% { transform: scale(1.6); opacity: 0; }
 }
 
-/* Mic (static) */
-.mic {
-  position: absolute;
-  top: 90px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 36px;
-}
-
-/* ===== Desktop Layout ===== */
-.container {
-  width: 100%;
-  max-width: 1100px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 80px;
-  padding: 40px;
-}
-
-/* Features */
-.features {
-  max-width: 420px;
-}
-
-.feature {
-  font-size: 18px;
-  margin-bottom: 16px;
-  padding: 12px 16px;
-  border-radius: 8px;
-  background: rgba(255,255,255,0.04);
-}
-
-/* Login */
-.login {
-  width: 340px;
+/* ===== Login Card ===== */
+.card {
   background: #020617;
-  padding: 32px;
+  padding: 30px;
+  width: 320px;
   border-radius: 12px;
   text-align: center;
+  color: white;
   box-shadow: 0 0 25px rgba(0,0,0,0.6);
+  z-index: 2;
 }
 
-.login input {
+input {
   width: 100%;
   padding: 10px;
   margin: 10px 0;
@@ -75,7 +71,7 @@ body {
   border: none;
 }
 
-.login button {
+button {
   width: 100%;
   padding: 12px;
   border-radius: 8px;
@@ -85,38 +81,66 @@ body {
   cursor: pointer;
 }
 
-/* ===== Mobile ONLY ===== */
-@media (max-width: 768px) {
-
-  body {
-    align-items: flex-start;
-  }
-
-  .container {
-    flex-direction: column;
-    gap: 30px;
-    padding-top: 160px;
-  }
-
-  .features {
-    max-width: 100%;
-  }
-
-  .feature {
-    font-size: 14px;
-  }
-
-  .login {
-    width: 100%;
-    max-width: 280px;
-  }
-
-  .logo img {
-    height: 40px;
-  }
-
-  .mic {
-    font-size: 30px;
-  }
+/* ===== Features ===== */
+.nova-features {
+  max-width: 380px;
+  color: #ffffff;
 }
 
+.nf-item {
+  font-size: 18px;
+  margin-bottom: 16px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.nf-item::before {
+  content: "➜";
+  margin-right: 12px;
+  color: #38bdf8;
+  font-size: 20px;
+}
+
+/* ===== Hover Glow Effect ===== */
+.nf-item:hover {
+  background: rgba(56,189,248,0.12);
+  box-shadow: 0 0 15px rgba(56,189,248,0.6);
+  transform: translateX(6px);
+}
+
+/* ===== Mobile View Fix ===== */
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+    gap: 40px;
+    padding-top: 140px;
+  }
+
+  .logo {
+    position: static;
+  }
+
+  .mic-container {
+    position: static;
+  }
+
+  .card {
+    width: 90%;
+  }
+}
+.w2j-logo {
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 10px rgba(0,255,255,0.4);
+  }
+  to {
+    box-shadow: 0 0 20px rgba(0,255,255,0.9);
+  }
+}
