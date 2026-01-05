@@ -1,0 +1,146 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f172a, #020617);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 120px;
+  font-family: Arial, sans-serif;
+  flex-wrap: wrap;
+}
+
+/* ===== Logo ===== */
+.logo {
+  position: absolute;
+  top: 30px;
+  left: 40px;
+}
+
+.logo img {
+  height: 55px;
+}
+
+/* ===== Mic Animation ===== */
+.mic-container {
+  position: absolute;
+  top: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mic-icon {
+  font-size: 38px;
+  z-index: 2;
+}
+
+.mic-circle {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(34,197,94,0.25);
+  animation: pulse 1.6s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.6); opacity: 1; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+
+/* ===== Login Card ===== */
+.card {
+  background: #020617;
+  padding: 30px;
+  width: 320px;
+  border-radius: 12px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 0 25px rgba(0,0,0,0.6);
+  z-index: 2;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: none;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  background: #22c55e;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* ===== Features ===== */
+.nova-features {
+  max-width: 380px;
+  color: #ffffff;
+}
+
+.nf-item {
+  font-size: 18px;
+  margin-bottom: 16px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.nf-item::before {
+  content: "➜";
+  margin-right: 12px;
+  color: #38bdf8;
+  font-size: 20px;
+}
+
+/* ===== Hover Glow Effect ===== */
+.nf-item:hover {
+  background: rgba(56,189,248,0.12);
+  box-shadow: 0 0 15px rgba(56,189,248,0.6);
+  transform: translateX(6px);
+}
+
+/* ===== Mobile View Fix ===== */
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+    gap: 40px;
+    padding-top: 140px;
+  }
+
+  .logo {
+    position: static;
+  }
+
+  .mic-container {
+    position: static;
+  }
+
+  .card {
+    width: 90%;
+  }
+}
+.w2j-logo {
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 10px rgba(0,255,255,0.4);
+  }
+  to {
+    box-shadow: 0 0 20px rgba(0,255,255,0.9);
+  }
+}
