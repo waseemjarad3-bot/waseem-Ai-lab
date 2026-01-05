@@ -1,3 +1,4 @@
+/* ===== Base (Desktop Default) ===== */
 body {
   margin: 0;
   min-height: 100vh;
@@ -12,32 +13,32 @@ body {
 /* Logo */
 .logo {
   position: absolute;
-  top: 20px;
-  left: 30px;
+  top: 24px;
+  left: 40px;
 }
 
 .logo img {
-  height: 50px;
+  height: 55px;
 }
 
 /* Mic */
 .mic-container {
   position: absolute;
-  top: 90px;
+  top: 110px;
   left: 50%;
   transform: translateX(-50%);
 }
 
 .mic-icon {
-  font-size: 36px;
+  font-size: 40px;
   position: relative;
   z-index: 2;
 }
 
 .mic-circle {
   position: absolute;
-  width: 80px;
-  height: 80px;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
   background: rgba(34,197,94,0.3);
   animation: pulse 1.6s infinite;
@@ -48,50 +49,50 @@ body {
   to { transform: scale(1.6); opacity: 0; }
 }
 
-/* Layout */
+/* Desktop Layout */
 .main-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 80px;
+  gap: 120px;
   align-items: center;
 }
 
 /* Features */
 .nova-features {
-  max-width: 360px;
-  color: #fff;
+  max-width: 420px;
+  color: #ffffff;
 }
 
 .nf-item {
-  font-size: 17px;
-  margin-bottom: 14px;
-  padding: 10px 14px;
+  font-size: 18px;
+  margin-bottom: 18px;
+  padding: 12px 16px;
   border-radius: 8px;
-  background: rgba(255,255,255,0.03);
+  background: rgba(255,255,255,0.04);
 }
 
 /* Login Card */
 .card {
-  width: 320px;
+  width: 340px;
   background: #020617;
-  padding: 30px;
+  padding: 34px;
   border-radius: 12px;
   text-align: center;
   color: white;
-  box-shadow: 0 0 25px rgba(0,0,0,0.6);
+  box-shadow: 0 0 30px rgba(0,0,0,0.6);
 }
 
 .card input {
   width: 100%;
-  padding: 10px;
-  margin: 10px 0;
+  padding: 11px;
+  margin: 12px 0;
   border-radius: 8px;
   border: none;
 }
 
 .card button {
   width: 100%;
-  padding: 12px;
+  padding: 13px;
   border-radius: 8px;
   background: #22c55e;
   border: none;
@@ -99,7 +100,7 @@ body {
   cursor: pointer;
 }
 
-/* ===== Mobile Fix (NO SCROLL, SAME VIEW) ===== */
+/* ===== Mobile / Tablet ONLY ===== */
 @media (max-width: 768px) {
 
   body {
@@ -107,9 +108,9 @@ body {
   }
 
   .main-layout {
+    gap: 40px;
     transform: scale(0.82);
     transform-origin: top center;
-    gap: 40px;
   }
 
   .card {
@@ -118,10 +119,15 @@ body {
   }
 
   .nf-item {
-    font-size: 13px;
+    font-size: 14px;
+    margin-bottom: 10px;
   }
 
   .logo img {
     height: 40px;
+  }
+
+  .mic-icon {
+    font-size: 32px;
   }
 }
