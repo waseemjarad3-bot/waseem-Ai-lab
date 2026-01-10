@@ -1,44 +1,216 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-</body>
-  <meta charset="UTF-8">
-  <title>W2J AI Assistant</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Nova AI Voice Assistant</title>
+
+<style>
+:root{
+  --bg:#0b0b0c;
+  --card:#121214;
+  --text:#ffffff;
+  --muted:#9ca3af;
+  --accent:#7c9cff;
+  --border:rgba(255,255,255,0.08);
+}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Inter,system-ui,Arial}
+body{
+  background:radial-gradient(circle at top,#111 0%,#000 60%);
+  color:var(--text);
+}
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:32px 20px;
+}
+
+/* HEADER */
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.logo{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  font-weight:600;
+}
+.logo span{
+  width:22px;height:22px;
+  background:#facc15;
+  border-radius:6px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  color:#000;
+  font-size:14px;
+}
+.login-btn{
+  border:1px solid var(--border);
+  padding:8px 18px;
+  border-radius:999px;
+  background:transparent;
+  color:#fff;
+  cursor:pointer;
+}
+
+/* HERO */
+.hero{
+  text-align:center;
+  padding:120px 10px 80px;
+}
+.badge{
+  display:inline-block;
+  padding:6px 14px;
+  border:1px solid var(--border);
+  border-radius:999px;
+  color:#c7d2fe;
+  font-size:12px;
+  margin-bottom:22px;
+}
+.hero h1{
+  font-size:56px;
+  font-weight:700;
+  line-height:1.1;
+}
+.hero h1 span{
+  color:var(--accent);
+}
+.hero p{
+  max-width:720px;
+  margin:20px auto 0;
+  color:var(--muted);
+  font-size:18px;
+}
+
+/* FEATURES */
+.features{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:26px;
+  padding:80px 0;
+}
+.card{
+  background:linear-gradient(180deg,#131313,#0d0d0e);
+  border:1px solid var(--border);
+  border-radius:20px;
+  padding:28px;
+}
+.icon{
+  width:36px;height:36px;
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-bottom:18px;
+  font-size:18px;
+}
+.blue{background:#0b2a44;color:#60a5fa}
+.yellow{background:#2a2205;color:#facc15}
+.purple{background:#1f1535;color:#c4b5fd}
+.card h3{
+  margin-bottom:10px;
+}
+.card p{
+  color:var(--muted);
+  line-height:1.6;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:40px 0 10px;
+  color:#6b7280;
+  font-size:13px;
+}
+</style>
 </head>
+
 <body>
+<div class="container">
 
-  <!-- ===== Logo ===== -->
+<header>
   <div class="logo">
-    <img src="images/logo.png" alt="Nova AI Logo">
+    <span>⚡</span>
+    Nova
   </div>
+  <button class="login-btn">Log in</button>
+</header>
 
-  <!-- ===== Mic Animation ===== -->
-  <div class="mic-container">
-    <div class="mic-circle"></div>
-    <div class="mic-icon">🎙️</div>
-  </div>
+<section class="hero">
+  <div class="badge">● W2J LAB NOW WITH AI VOICE</div>
+  <h1>Your Second Brain,<br><span>Nova AI Voice Assistant</span></h1>
+  <p>
+    A human-like AI voice assistant that listens, understands, remembers,
+    and speaks with you naturally — designed to manage your life,
+    not just your tasks.
+  </p>
+</section>
 
-  <!-- ===== Features ===== -->
-  <div class="nova-features">
-    <div class="nf-item">Voice Command System – بول کر کام کرو</div>
-    <div class="nf-item">Multiple Task Execution – ایک ساتھ کئی کام</div>
-    <div class="nf-item">Smart Automation – خودکار سسٹم</div>
-    <div class="nf-item">Works on Every Website – ہر ویب سائٹ پر</div>
-    <div class="nf-item">Intelligent AI Responses – سمجھدار جواب</div>
-  </div>
-  <!-- ===== Login Card ===== -->
+<section class="features">
+
   <div class="card">
-    <h1>Waseem AI Lab</h1>
-    <p>Voice Assistant – TalkSmart</p>
-
-    <input type="text" placeholder="Username">
-    <input type="password" placeholder="Password">
-
-    <button>Login</button>
+    <div class="icon blue">🎤</div>
+    <h3>Human-Like Voice Chat</h3>
+    <p>
+      Talk naturally with Nova. It understands your voice, replies like a human,
+      and communicates just like a real assistant.
+    </p>
   </div>
 
+  <div class="card">
+    <div class="icon yellow">⚡</div>
+    <h3>Tasks & Reminders</h3>
+    <p>
+      Nova remembers your tasks, reminders, schedules and important things —
+      so you never forget what matters.
+    </p>
+  </div>
+
+  <div class="card">
+    <div class="icon purple">🧠</div>
+    <h3>AI Memory</h3>
+    <p>
+      Nova remembers your conversations, preferences and habits,
+      giving you context exactly when you need it.
+    </p>
+  </div>
+
+  <div class="card">
+    <div class="icon blue">🌍</div>
+    <h3>Multiple Languages</h3>
+    <p>
+      Speak in different languages. Nova understands and responds
+      smoothly across multiple languages.
+    </p>
+  </div>
+
+  <div class="card">
+    <div class="icon yellow">📅</div>
+    <h3>Smart Daily Assistant</h3>
+    <p>
+      From daily planning to quick answers, Nova manages your day
+      intelligently and efficiently.
+    </p>
+  </div>
+
+  <div class="card">
+    <div class="icon purple">🔐</div>
+    <h3>Secure & Personal</h3>
+    <p>
+      Your conversations and data stay private, safe,
+      and fully under your control.
+    </p>
+  </div>
+
+</section>
+
+<footer>
+  © 2026 Waseem AI lab. All rights reserved.
+</footer>
+
+</div>
 </body>
 </html>
-
